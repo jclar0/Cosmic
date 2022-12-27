@@ -16,6 +16,9 @@ namespace Cosmic
         {
             InitializeComponent();
             Config.Read();
+
+            string website = Config.website;
+            webBrowser1.Url = new Uri(website); // Convert into Url
         }
 
         private void playGame_Click(object sender, EventArgs e)

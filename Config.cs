@@ -8,7 +8,8 @@ namespace Cosmic
     {
         // Set the default values for the options
         public static string gameName = "";
-        public static string version = "1.0";
+        public static string version = "0.3";
+        public static string website = "https://www.github.com/jclar0/Cosmic/";
 
         public static void Read()
         {
@@ -38,6 +39,10 @@ namespace Cosmic
                         {
                             version = value;
                         }
+                        else if (key == "website")
+                        {
+                            website = value;
+                        }
                     }
                 }
             }
@@ -46,7 +51,8 @@ namespace Cosmic
                 // Create the config file with the default options
                 string[] lines = {
                     "gameName = " + gameName,
-                    "version = " + version
+                    "version = " + version,
+                    "website = " + website
                 };
                 File.WriteAllLines(configPath, lines);
             }
@@ -54,6 +60,7 @@ namespace Cosmic
             // Print the options
             Console.WriteLine("[INFO] Game Name: " + gameName);
             Console.WriteLine("[INFO] Game Version: " + version);
+            Console.WriteLine("[INFO] Selected Website: " + website);
         }
     }
 }
