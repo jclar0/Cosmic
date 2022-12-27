@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cosmic
@@ -27,6 +28,10 @@ namespace Cosmic
             if (File.Exists(appPath))
             {
                 Process.Start(appPath);
+
+                Console.WriteLine("[INFO] Successfully launched " + Config.gameName + " ... ... Exiting app in 7 seconds.");
+                Thread.Sleep(7000);
+                Environment.Exit(0); // Exit with Code 0 (success)
             }
             else
             {
