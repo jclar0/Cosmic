@@ -25,5 +25,12 @@ namespace Cosmic
         {
             Launch.LaunchGame();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Launch the Launcher_About form
+            Launcher_About launcher_About = new Launcher_About();
+            launcher_About.ShowDialog(); // Prevents the user from using the main window until closed
+        }
     }
 }
