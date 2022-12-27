@@ -12,14 +12,12 @@ namespace Cosmic
     {
         public static void LaunchGame()
         {
-            // The name of the game - so we can launch stuff like Unity games
-            String gameName = "Trust Me I Got This";
 
             // Find the directory that the Launcher is currently in
             String currentDirectory = Directory.GetCurrentDirectory();
 
             //Get around "Game Name\.exe" by combining the name and .exe
-            String gamePath = gameName + ".exe";
+            String gamePath = Config.gameName + ".exe";
 
             // Create a new string combining the current directory, the "bin" folder and the Game executable
             String appPath = Path.Combine(currentDirectory, "bin", gamePath);

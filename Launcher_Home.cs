@@ -15,6 +15,7 @@ namespace Cosmic
         public Launcher_Home()
         {
             InitializeComponent();
+            Config.Read();
         }
 
         private void playGame_Click(object sender, EventArgs e)
