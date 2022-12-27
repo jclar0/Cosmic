@@ -32,5 +32,10 @@ namespace Cosmic
             Launcher_About launcher_About = new Launcher_About();
             launcher_About.ShowDialog(); // Prevents the user from using the main window until closed
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
