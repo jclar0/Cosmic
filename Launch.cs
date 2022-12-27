@@ -30,7 +30,7 @@ namespace Cosmic
             else
             {
                 // TODO: Add a Label to the Launcher_Home window that is invisible unless appPath does not exist
-                Console.WriteLine("[ERROR] Game.exe not found.");
+                Console.WriteLine("[ERROR] Game.exe not found. Path: " + appPath);
             }
         }
     }
