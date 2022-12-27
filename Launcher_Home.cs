@@ -16,5 +16,10 @@ namespace Cosmic
         {
             InitializeComponent();
         }
+
+        private void playGame_Click(object sender, EventArgs e)
+        {
+            Launch.LaunchGame();
+        }
     }
 }

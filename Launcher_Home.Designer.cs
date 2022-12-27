@@ -45,6 +45,7 @@
             this.playGame.TabIndex = 0;
             this.playGame.Text = "Play Game";
             this.playGame.UseVisualStyleBackColor = false;
+            this.playGame.Click += new System.EventHandler(this.playGame_Click);
             // 
             // webBrowser1
             // 
