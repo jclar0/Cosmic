@@ -52,8 +52,8 @@ namespace Cosmic
             }
 
             // Print the options
-            Console.WriteLine("Game name: " + gameName);
-            Console.WriteLine("Version: " + version);
+            Console.WriteLine("[INFO] Game Name: " + gameName);
+            Console.WriteLine("[INFO] Game Version: " + version);
         }
     }
 }
