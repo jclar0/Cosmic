@@ -27,7 +27,7 @@ namespace Cosmic
                 // Catch an exception if the line is left blank, or otherwise not formatted correctly
                 webBrowser1.Url = null; // Allow the app to keep running by displaying a "Null" page
                 // Display an error box to end user
-                MessageBox.Show(ex.Message, "Error: The webpage failed to load. Ensure configuration file is okay.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The webpage failed to load. Ensure launcher is configured properly. Forward this error to the game developer.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
