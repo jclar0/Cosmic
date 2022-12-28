@@ -13,7 +13,6 @@ namespace Cosmic
     {
         public static void LaunchGame()
         {
-
             // Find the directory that the Launcher is currently in
             String currentDirectory = Directory.GetCurrentDirectory();
 

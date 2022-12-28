@@ -13,9 +13,17 @@ namespace Cosmic
 
         public static void Read()
         {
-            // Check if the config file exists
-            string configPath = "LAUNCHER_CONFIG.txt";
+            // Workaround
+            string configDir = Directory.GetCurrentDirectory() + "\\config";
+            string configPath = Path.Combine(configDir, "LAUNCHER_CONFIG.txt");
 
+            if (!Directory.Exists(configPath))
+            {
+                // Fix for System.IO.DirectoryNotFoundException 
+                Directory.CreateDirectory(configDir);
+            }
+
+            // Check if the config file exists
             if (File.Exists(configPath))
             {
                 // Read the options from the config file
@@ -57,7 +65,9 @@ namespace Cosmic
                 File.WriteAllLines(configPath, lines);
             }
 
-            // Print the options
+            // Print some information that could be useful
+            Console.WriteLine("[INFO] Directory: " + Directory.GetCurrentDirectory()) ;
+            Console.WriteLine("[INFO] Configuration File Directory: " + configPath);
             Console.WriteLine("[INFO] Game Name: " + gameName);
             Console.WriteLine("[INFO] Game Version: " + version);
             Console.WriteLine("[INFO] Selected Website: " + website);
