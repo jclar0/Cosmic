@@ -8,8 +8,8 @@ namespace Cosmic
     {
         // Set the default values for the options
         public static string gameName = "";
-        public static string version = "0.3";
-        public static string website = "https://www.github.com/jclar0/Cosmic/";
+        public static string version = "";
+        public static string website = "";
 
         public static void Read()
         {

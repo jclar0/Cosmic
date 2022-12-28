@@ -18,7 +18,17 @@ namespace Cosmic
             Config.Read();
 
             string website = Config.website;
-            webBrowser1.Url = new Uri(website); // Convert into Url
+            try
+            {
+                webBrowser1.Url = new Uri(website); // Convert into Url
+            }
+            catch (UriFormatException ex)
+            {
+                // Catch an exception if the line is left blank, or otherwise not formatted correctly
+                webBrowser1.Url = null; // Allow the app to keep running by displaying a "Null" page
+                // Display an error box to end user
+                MessageBox.Show(ex.Message, "Error: The webpage failed to load. Ensure configuration file is okay.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void playGame_Click(object sender, EventArgs e)
