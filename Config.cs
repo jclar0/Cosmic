@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 
@@ -13,64 +14,38 @@ namespace Cosmic
 
         public static void Read()
         {
-            // Workaround
             string configDir = Directory.GetCurrentDirectory() + "\\config";
-            string configPath = Path.Combine(configDir, "LAUNCHER_CONFIG.txt");
+            string configPath = Path.Combine(configDir, "LAUNCHER_CONFIG.ini");
 
-            if (!Directory.Exists(configPath))
+            if (!Directory.Exists(configDir))
             {
                 // Fix for System.IO.DirectoryNotFoundException 
                 Directory.CreateDirectory(configDir);
             }
 
-            // Check if the config file exists
-            if (File.Exists(configPath))
-            {
-                // Read the options from the config file
-                string[] lines = File.ReadAllLines(configPath);
-                foreach (string line in lines)
-                {
-                    // Split the line into key-value pairs
-                    string[] parts = line.Split('=');
-                    if (parts.Length == 2)
-                    {
-                        // Trim any leading or trailing whitespace
-                        string key = parts[0].Trim();
-                        string value = parts[1].Trim();
+            var MyIni = new IniFile(configPath); // Specify the .ini file we're using
 
-                        // Set the option based on the key
-                        if (key == "gameName")
-                        {
-                            gameName = value;
-                        }
-                        else if (key == "version")
-                        {
-                            version = value;
-                        }
-                        else if (key == "website")
-                        {
-                            website = value;
-                        }
-                    }
+            // Hack
+            using (FileStream stream = File.Open(configPath, FileMode.Open, FileAccess.Read))
+            {
+                // Check if empty
+                if (stream.Length == 0)
+                {
+                    // Write values
+                    MyIni.Write("GameName", gameName);
+                    MyIni.Write("Version", version);
+                    MyIni.Write("WebsiteDir", website);
                 }
             }
-            else
-            {
-                // Create the config file with the default options
-                string[] lines = {
-                    "gameName = " + gameName,
-                    "version = " + version,
-                    "website = " + website
-                };
-                File.WriteAllLines(configPath, lines);
-            }
 
-            // Print some information that could be useful
-            Console.WriteLine("[INFO] Directory: " + Directory.GetCurrentDirectory()) ;
-            Console.WriteLine("[INFO] Configuration File Directory: " + configPath);
-            Console.WriteLine("[INFO] Game Name: " + gameName);
-            Console.WriteLine("[INFO] Game Version: " + version);
-            Console.WriteLine("[INFO] Selected Website: " + website);
+            // Read values
+            gameName = MyIni.Read("GameName");
+            version = MyIni.Read("Version");
+            website = MyIni.Read("WebsiteDir");
+
+            // Statements
+            Console.WriteLine("Game Name: " + gameName);
+            Console.WriteLine("Loaded Webpage: " + website);
         }
     }
 }
