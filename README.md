@@ -1,12 +1,20 @@
-# Cosmic Launcher
+<h1 align="center">Cosmic Launcher</h1>
+<p align="center">A free and easy to use launcher for your game.</p>
 
-A free to use launcher, intended for smaller games
+---------------------------------------------------------------
+![](https://i.ibb.co/3v6sbb1/Screenshot-2022-12-29-091312.png)
 
-![](https://i.ibb.co/RgTcKm1/Launcher-Screenshot.png)
+--------------------------------------------------------------
 
-Cosmic is a small, Windows exclusive game launcher written in C# using WinForms. It can be customized to match your game and is easy to understand and distribute with your game.
+![GitHub](https://img.shields.io/github/license/jclar0/cosmic) ![GitHub issues](https://img.shields.io/github/issues/jclar0/cosmic)
 
-## Links
+## How does it work?
 
- - Game used in screenshots is [Trust Me I Got This!](https://circusatos.itch.io/trust-me-i-got-this) by Circus Atos
- - [Joystick icon by Icons8](https://icons8.com/icon/79960/joystick)
+Cosmic is an easy-to-use game launcher, written in C# for Windows. You don't need any coding experience, or even to open the source code, to program it to work with your game.
+
+You can add a landing page to the launcher (e.g. latest patch notes) to keep your players informed or even just show off the game a little bit more. (Who hates intrusive advertisements anyway?)
+
+### Acknowledgements
+
+ * Game used in screenshots is [Trust Me, I Got This](https://circusatos.itch.io/trust-me-i-got-this) by Circus Atos
+ * <a target="_blank" href="https://icons8.com/icon/79960/joystick">Joystick</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
