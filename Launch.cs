@@ -14,15 +14,15 @@ namespace Cosmic
         public static void LaunchGame()
         {
             // Find the directory that the Launcher is currently in
-            String currentDirectory = Directory.GetCurrentDirectory();
+            string currentDirectory = Directory.GetCurrentDirectory();
 
             //Get around "Game Name\.exe" by combining the name and .exe
-            String gamePath = Config.gameName + ".exe";
+            string gamePath = Config.gameName + ".exe";
 
             string binPath = Path.Combine(currentDirectory, "bin");
 
             // Create a new string combining the current directory, the "bin" folder and the Game executable
-            String appPath = Path.Combine(binPath, gamePath);
+            string appPath = Path.Combine(binPath, gamePath);
 
             // Check if the Game.exe file exists
             // Otherwise, print an error
