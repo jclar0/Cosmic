@@ -23,6 +23,12 @@ namespace Cosmic
                 Directory.CreateDirectory(configDir);
             }
 
+            if (!File.Exists(configPath))
+            {
+                // Fix for another System.IO.WhateverTheHellNotFoundException
+                File.Create(configPath);
+            }
+
             var MyIni = new IniFile(configPath); // Specify the .ini file we're using
 
             // Hack

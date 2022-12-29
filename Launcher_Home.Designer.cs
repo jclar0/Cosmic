@@ -122,7 +122,7 @@
             this.Controls.Add(this.playGame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Launcher_Home";
-            this.Text = "Cosmic Launcher";
+            this.Text = "Launcher";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
