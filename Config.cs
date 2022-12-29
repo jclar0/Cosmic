@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Cosmic
 {
@@ -15,7 +16,7 @@ namespace Cosmic
         public static void Read()
         {
             string configDir = Directory.GetCurrentDirectory() + "\\config";
-            string configPath = Path.Combine(configDir, "LAUNCHER_CONFIG.ini");
+            string configPath = Path.Combine(configDir, "Launcher_Config.ini");
 
             if (!Directory.Exists(configDir))
             {
@@ -23,35 +24,19 @@ namespace Cosmic
                 Directory.CreateDirectory(configDir);
             }
 
-            if (!File.Exists(configPath))
+            try
             {
-                // Fix for another System.IO.WhateverTheHellNotFoundException
-                File.Create(configPath);
+                var MyIni = new IniFile(configPath); // Specify the .ini file we're using
+
+                // Read values
+                gameName = MyIni.Read("GameName");
+                version = MyIni.Read("Version");
+                website = MyIni.Read("WebsiteDir");
             }
-
-            var MyIni = new IniFile(configPath); // Specify the .ini file we're using
-
-            // Hack
-            using (FileStream stream = File.Open(configPath, FileMode.Open, FileAccess.Read))
+            catch (FileNotFoundException ex)
             {
-                // Check if empty
-                if (stream.Length == 0)
-                {
-                    // Write values
-                    MyIni.Write("GameName", gameName);
-                    MyIni.Write("Version", version);
-                    MyIni.Write("WebsiteDir", website);
-                }
+                MessageBox.Show(ex.Message, "Missing configuration file.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Read values
-            gameName = MyIni.Read("GameName");
-            version = MyIni.Read("Version");
-            website = MyIni.Read("WebsiteDir");
-
-            // Statements
-            Console.WriteLine("Game Name: " + gameName);
-            Console.WriteLine("Loaded Webpage: " + website);
         }
     }
 }
