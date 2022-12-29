@@ -6,8 +6,6 @@
 
 --------------------------------------------------------------
 
-![GitHub](https://img.shields.io/github/license/jclar0/cosmic) ![GitHub issues](https://img.shields.io/github/issues/jclar0/cosmic)
-
 ## How does it work?
 
 Cosmic is an easy-to-use game launcher, written in C# for Windows. You don't need any coding experience, or even to open the source code, to program it to work with your game.
