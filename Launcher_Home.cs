@@ -22,12 +22,10 @@ namespace Cosmic
             {
                 webBrowser1.Url = new Uri(website); // Convert into Url
             }
-            catch (UriFormatException ex)
+            catch (UriFormatException)
             {
-                // Catch an exception if the line is left blank, or otherwise not formatted correctly
                 webBrowser1.Url = null; // Allow the app to keep running by displaying a "Null" page
-                // Display an error box to end user
-                MessageBox.Show("The webpage failed to load. Ensure launcher is configured properly. Forward this error to the game developer.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("[ERROR] The webpage failed to load. Ensure the launcher is configured properly.");
             }
         }
 
