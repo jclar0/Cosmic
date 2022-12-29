@@ -19,8 +19,10 @@ namespace Cosmic
             //Get around "Game Name\.exe" by combining the name and .exe
             String gamePath = Config.gameName + ".exe";
 
+            string binPath = Path.Combine(currentDirectory, "bin");
+
             // Create a new string combining the current directory, the "bin" folder and the Game executable
-            String appPath = Path.Combine(currentDirectory, "bin", gamePath);
+            String appPath = Path.Combine(binPath, gamePath);
 
             // Check if the Game.exe file exists
             // Otherwise, print an error
@@ -34,7 +36,13 @@ namespace Cosmic
             }
             else
             {
-                // TODO: Add a Label to the Launcher_Home window that is invisible unless appPath does not exist
+                // If the "bin" folder doesn't exist, we create it
+                if (!Directory.Exists(binPath))
+                {
+                    Directory.CreateDirectory(binPath);
+                }
+
+
                 Console.WriteLine("[ERROR] Game.exe not found. Path: " + appPath);
             }
         }
