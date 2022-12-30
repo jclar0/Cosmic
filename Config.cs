@@ -1,8 +1,4 @@
-﻿using System;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
+﻿using System.IO;
 
 namespace Cosmic
 {
