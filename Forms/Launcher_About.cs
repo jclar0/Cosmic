@@ -8,8 +8,16 @@ namespace Cosmic
         {
             InitializeComponent();
 
-            // Change the label1 text to match the game being played
+            // Update this text to match config
             label1.Text = Config.gameName + " Launcher";
+            label3.Text = "Game Version " + Config.gameVersion;
+
+            // Check if the developer wants the Cosmic link to show, if not, hide it :(
+            if (Config.showCosmicLink == false)
+            {
+                linkLabel1.Enabled = false;
+                linkLabel1.Visible = false;
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

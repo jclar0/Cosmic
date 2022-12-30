@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Cosmic
 {
@@ -8,6 +9,8 @@ namespace Cosmic
         public static string gameName;
         public static string gameVersion;
         public static string gameWebsite;
+
+        public static bool showCosmicLink;
 
         public static void Read()
         {
@@ -21,9 +24,16 @@ namespace Cosmic
                 string[] lines = File.ReadAllLines(filePath);
 
                 // Set the values according to options in the file
-                gameName = lines[0];
-                gameVersion = lines[1];
-                gameWebsite = lines[2];
+                // If a value is missing, the code will ignore the
+                // file entirely and use default values
+                try
+                {
+                    gameName = lines[0];
+                    gameVersion = lines[1];
+                    gameWebsite = lines[2];
+                    showCosmicLink = bool.Parse(lines[3]);
+                }
+                catch (IndexOutOfRangeException) { }
             }
             else
             {
@@ -31,6 +41,7 @@ namespace Cosmic
                 gameName = "My Game";
                 gameVersion = "1.0.0";
                 gameWebsite = "https://www.example.com";
+                showCosmicLink = true;
 
                 Write();
             }
