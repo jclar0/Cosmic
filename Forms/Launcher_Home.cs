@@ -24,7 +24,7 @@ namespace Cosmic
 
         private void playGame_Click(object sender, EventArgs e)
         {
-            Launch.LaunchGame();
+            Launch.Game();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
