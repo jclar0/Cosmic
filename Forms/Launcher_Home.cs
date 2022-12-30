@@ -17,7 +17,7 @@ namespace Cosmic
             InitializeComponent();
             Config.Read();
 
-            string website = Config.website;
+            string website = Config.gameWebsite;
             try
             {
                 webBrowser1.Url = new Uri(website); // Convert into Url
