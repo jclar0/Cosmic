@@ -92,24 +92,24 @@
     <Compile Include="Config.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="Launch.cs" />
-    <Compile Include="Launcher_About.cs">
+    <Compile Include="Forms\Launcher_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Launcher_About.Designer.cs">
+    <Compile Include="Forms\Launcher_About.Designer.cs">
       <DependentUpon>Launcher_About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Launcher_Home.cs">
+    <Compile Include="Forms\Launcher_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Launcher_Home.Designer.cs">
+    <Compile Include="Forms\Launcher_Home.Designer.cs">
       <DependentUpon>Launcher_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Launcher_About.resx">
+    <EmbeddedResource Include="Forms\Launcher_About.resx">
       <DependentUpon>Launcher_About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Launcher_Home.resx">
+    <EmbeddedResource Include="Forms\Launcher_Home.resx">
       <DependentUpon>Launcher_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

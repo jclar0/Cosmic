@@ -8,35 +8,45 @@ namespace Cosmic
 {
     class Config
     {
-        // Set the default values for the options
-        public static string gameName = "";
-        public static string version = "";
-        public static string website = "";
+        // Declare string
+        public static string gameName;
+        public static string gameVersion;
+        public static string gameWebsite;
 
         public static void Read()
         {
-            string configDir = Directory.GetCurrentDirectory() + "\\config";
-            string configPath = Path.Combine(configDir, "Launcher_Config.ini");
+            // Define the path of the configuration text file
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "config.txt");
 
-            if (!Directory.Exists(configDir))
+            // Check if the file exists
+            if (File.Exists(filePath))
             {
-                // Fix for System.IO.DirectoryNotFoundException 
-                Directory.CreateDirectory(configDir);
-            }
+                // Read the file into a string array
+                string[] lines = File.ReadAllLines(filePath);
 
-            try
+                // Set the values according to options in the file
+                gameName = lines[0];
+                gameVersion = lines[1];
+                gameWebsite = lines[2];
+            }
+            else
             {
-                var MyIni = new IniFile(configPath); // Specify the .ini file we're using
+                // Create the file and fill it with some default variables
+                gameName = "My Game";
+                gameVersion = "1.0.0";
+                gameWebsite = "https://www.example.com";
 
-                // Read values
-                gameName = MyIni.Read("GameName");
-                version = MyIni.Read("Version");
-                website = MyIni.Read("WebsiteDir");
+                Write();
             }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show(ex.Message, "Missing configuration file.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        public static void Write()
+        {
+            // Define the path of the configuration text file
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "config.txt");
+
+            // Now write to the file, looks messy but it should work
+            File.WriteAllLines(filePath, new string[] { gameName, gameVersion, gameWebsite });
         }
     }
 }
