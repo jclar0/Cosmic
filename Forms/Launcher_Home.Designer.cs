@@ -36,6 +36,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOption = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.playGame.ForeColor = System.Drawing.Color.Black;
             this.playGame.Location = new System.Drawing.Point(13, 480);
             this.playGame.Name = "playGame";
-            this.playGame.Size = new System.Drawing.Size(135, 41);
+            this.playGame.Size = new System.Drawing.Size(597, 41);
             this.playGame.TabIndex = 0;
             this.playGame.Text = "Play Game";
             this.playGame.UseVisualStyleBackColor = false;
@@ -76,7 +77,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(726, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(726, 31);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -94,7 +95,7 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(60, 24);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(60, 28);
             this.toolStripDropDownButton1.Text = "Menu";
             // 
             // aboutToolStripMenuItem
@@ -111,12 +112,24 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // lOption
+            // 
+            this.lOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lOption.Location = new System.Drawing.Point(617, 481);
+            this.lOption.Name = "lOption";
+            this.lOption.Size = new System.Drawing.Size(96, 40);
+            this.lOption.TabIndex = 3;
+            this.lOption.Text = "Options";
+            this.lOption.UseVisualStyleBackColor = true;
+            this.lOption.Click += new System.EventHandler(this.lOption_Click);
+            // 
             // Launcher_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(726, 533);
+            this.Controls.Add(this.lOption);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.playGame);
@@ -139,6 +152,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button lOption;
     }
 }
 

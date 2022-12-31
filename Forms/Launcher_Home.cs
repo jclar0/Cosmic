@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cosmic.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Cosmic
@@ -37,6 +38,13 @@ namespace Cosmic
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void lOption_Click(object sender, EventArgs e)
+        {
+            // Launch the Launcher_Options form
+            Launcher_Options launcher_Options = new Launcher_Options();
+            launcher_Options.ShowDialog();
         }
     }
 }
