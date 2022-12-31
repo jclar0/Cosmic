@@ -16,11 +16,6 @@ namespace Cosmic.Forms
             textBox1.Text = gameArgs;
         }
 
-        private void Launcher_Options_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void confirmOpt_Click(object sender, EventArgs e)
         {
             // Save the contents of the text box to the gameArgs string
