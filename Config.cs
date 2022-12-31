@@ -9,7 +9,6 @@ namespace Cosmic
         public static string gameName;
         public static string gameVersion;
         public static string gameWebsite;
-        public static string gameArgs;
 
         public static bool showCosmicLink;
 
@@ -32,8 +31,7 @@ namespace Cosmic
                     gameName = lines[0];
                     gameVersion = lines[1];
                     gameWebsite = lines[2];
-                    gameArgs = lines[3];
-                    showCosmicLink = bool.Parse(lines[4]);
+                    showCosmicLink = bool.Parse(lines[3]);
                 }
                 catch (IndexOutOfRangeException) { }
             }
@@ -43,7 +41,6 @@ namespace Cosmic
                 gameName = "My Game";
                 gameVersion = "1.0.0";
                 gameWebsite = "https://www.example.com";
-                gameArgs = "";
                 showCosmicLink = true;
 
                 Write();
@@ -56,7 +53,7 @@ namespace Cosmic
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "config.txt");
 
             // Now write to the file, looks messy but it should work
-            File.WriteAllLines(filePath, new string[] { gameName, gameVersion, gameWebsite, gameArgs, showCosmicLink.ToString() });
+            File.WriteAllLines(filePath, new string[] { gameName, gameVersion, gameWebsite, showCosmicLink.ToString() });
         }
     }
 }

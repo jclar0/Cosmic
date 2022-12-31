@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cosmic.Forms;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace Cosmic
             // Check if the Game.exe file exists
             if (File.Exists(appPath))
             {
-                Process.Start(appPath, Config.gameArgs);
+                Process.Start(appPath, Launcher_Options.gameArgs);
                 Environment.Exit(0); // Exit with Code 0 (success)
             }
             else

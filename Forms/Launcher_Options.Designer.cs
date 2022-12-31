@@ -42,6 +42,7 @@
             this.confirmOpt.TabIndex = 0;
             this.confirmOpt.Text = "OK";
             this.confirmOpt.UseVisualStyleBackColor = true;
+            this.confirmOpt.Click += new System.EventHandler(this.confirmOpt_Click);
             // 
             // label1
             // 
