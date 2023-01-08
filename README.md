@@ -1,18 +1,5 @@
-<h1 align="center">Cosmic Launcher</h1>
-<p align="center">A free and easy to use launcher for your game.</p>
+## Cosmic
 
----------------------------------------------------------------
-![](https://i.ibb.co/3v6sbb1/Screenshot-2022-12-29-091312.png)
+Cosmic is a free to use and open source launcher for video games, specifically indie games that can be released as standalone programs.
 
---------------------------------------------------------------
-
-## How does it work?
-
-Cosmic is an easy-to-use game launcher, written in C# for Windows. You don't need any coding experience, or even to open the source code, to program it to work with your game.
-
-You can add a landing page to the launcher (e.g. latest patch notes) to keep your players informed or even just show off the game a little bit more. (Who hates intrusive advertisements anyway?)
-
-### Acknowledgements
-
- * Game used in screenshots is [Trust Me, I Got This](https://circusatos.itch.io/trust-me-i-got-this) by Circus Atos
- * <a target="_blank" href="https://icons8.com/icon/79960/joystick">Joystick</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+You can read more about how to use and configure it on the [wiki](https://github.com/jclar0/Cosmic/wiki)
